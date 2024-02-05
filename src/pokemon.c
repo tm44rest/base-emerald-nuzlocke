@@ -5940,6 +5940,9 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
 
 void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 {
+    // Issue 12: No EV Gains
+    
+    /*
     u8 evs[NUM_STATS];
     u16 evIncrease = 0;
     u16 totalEVs = 0;
@@ -6015,6 +6018,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         totalEVs += evIncrease;
         SetMonData(mon, MON_DATA_HP_EV + i, &evs[i]);
     }
+    */
 }
 
 u16 GetMonEVCount(struct Pokemon *mon)
