@@ -1556,27 +1556,24 @@ static void Task_HandleInput(u8 taskId)
             BeginCloseSummaryScreen(taskId);
         }
         // Show IVs
-        else if (JOY_NEW(R_BUTTON))
+        else if (JOY_NEW(R_BUTTON) || JOY_NEW(L_BUTTON))
         {
-            PlaySE(SE_SELECT);
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
             {
                 BufferIvOrEvStats(0);
             }
         }
-        // Show EVs
-        else if (JOY_NEW(L_BUTTON))
-        {
-            PlaySE(SE_SELECT);
-            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
-            {
-                BufferIvOrEvStats(1);
-            }
-        }
+        // Show EVs is disabled, since EV gains will be disabled in this hack
+        // else if (JOY_NEW(L_BUTTON))
+        // {
+        //     if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
+        //     {
+        //         BufferIvOrEvStats(1);
+        //     }
+        // }
         // Show Stats (default)
         else if (JOY_NEW(START_BUTTON))
         {
-            PlaySE(SE_SELECT);
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
             {
                 BufferIvOrEvStats(2);
